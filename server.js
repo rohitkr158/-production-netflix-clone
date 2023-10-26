@@ -4,6 +4,7 @@ const userRoutes = require("./routes/UserRoutes");
 const mongoose = require("mongoose");
 const app = express();
 const path = require('path')
+const PORT = process.env.PORT || 8000;
 
 app.use(cors());
 app.use(express.json());
@@ -29,7 +30,7 @@ app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./netflix-ui/build/index.html"));
 });
 
-app.listen(5000, () => {
-  console.log("server started on port 5000");
+app.listen(PORT, () => {
+  console.log("server started on port 8000");
 });
 
